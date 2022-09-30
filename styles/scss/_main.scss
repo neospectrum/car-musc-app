@@ -1,0 +1,118 @@
+// ------------------------------ Основные настройки экрана -----------------------------------------------------------------------
+body {
+	font-family: 'ProximaNova-Regular';
+	font-size: 14px;
+	background-color: #162831;
+	color: #FFFFFF;
+}
+.lock {
+	overflow: hidden;
+	height: 100%;
+}
+._ibg {
+	position: relative;
+	& img {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+.wrapper {
+}
+.swiper {
+	width: 100%;
+  }
+.container {
+	max-width: 1296px;
+	margin: 0px auto;
+	padding: 0 10px;
+	box-sizing: content-box;
+}
+.container-swiper {
+	margin: 0px auto;
+}
+
+
+@media (max-width: 992px) {
+	.container-swiper {
+		max-width: 992px;
+	}
+}
+@media (max-width: 767px) {
+	.container {
+		max-width: 700px;
+	}
+	.container-swiper {
+		max-width: 767px;
+	}
+}
+
+.page {
+	flex: 1 1 auto;
+	margin: 120px 0 30px 0;
+	& > div:not(:last-child) {
+		margin: 0 0 150px 0;
+	}
+	&__main-block {}
+	&__session-block {}
+	&__feedback-block {}
+}
+@media (max-width: 992px) {
+	.page > div:not(:last-child) {
+		margin: 0 0 50px 0;
+	}
+}
+
+.title {
+	white-space: none;
+	font-family: 'El Messiri';
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 140%;
+	position: relative;
+	margin: 0 0 100px 0;
+	&__main-block {
+		font-size: 24px;
+	}
+	&::before, &::after {
+		white-space: none;
+		width: 28px;
+		height: 14px;
+	}
+	&::before {
+		content: url('/img/sketch_left_blue.svg');
+		margin: 0 45px 0 0;
+	}
+	&::after {
+		content: url('/img/sketch_right_blue.svg');
+		margin: 0 0 0 45px;
+	}
+	&.title__main-block::before {
+		content: url('/img/sketch_left.svg');
+	}
+	&.title__main-block::after {
+		content: url('/img/sketch_right.svg');
+	}
+}
+@media (max-width: 1248px) {
+	.title {
+		margin: 0 0 30px 0;
+	}
+}
+@media (max-width: 450px) {
+	.title.title__main-block {
+		font-size: 20px;
+	}
+	.title {
+		font-size: 24px;
+	}
+	.title::before {
+		margin: 0 20px 0 0;
+	}
+	.title::after {
+		margin: 0 0 0 20px;
+	}
+}

@@ -1,0 +1,22 @@
+.footer {
+	background-color: aliceblue;
+	color: black;
+	&__container {
+ 
+	}
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 70px;
+	}
+	&__text {
+		text-align: center;
+		font-size: 40px;
+	}
+}
+@media (max-width: 425px) {
+	.footer__text {
+		font-size: 24px;
+	}
+}

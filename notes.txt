@@ -1,0 +1,25 @@
+browser-sync start --server --files "css/*.css"
+surge --domain visit.surge.sh
+
+
+#48acf0 blue 
+#383F51 dark
+#f0f8ff white
+#FFD23F yellow
+#F45B69 red
+#4682B4 blue2
+#1c1e25 dark2
+#DB3138 red
+
+
+sizes:
+    320px - 500%
+    321px - 400%
+    500px - 300%
+    600px - 250%
+    700px - 200%
+    800px - 175%
+    1000px - 150%
+    1200px - 125%
+    1300px - 110%
+    1400px - 100% 

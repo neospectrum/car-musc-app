@@ -1,0 +1,80 @@
+.main-block {
+	&__container {
+		position: relative;
+		max-height: 600px;
+	}
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: 136px 0 210px 0;
+	}
+	&__aqua {
+		user-select: none;
+		text-align: center;
+		z-index: 2;
+		max-width: 567px;
+	}
+	&__aqua div:not(:last-child) {
+		margin: 0 0 40px 0;
+	}
+	&__title.title::before {
+		margin: 0 66px 0 0;
+	}
+	&__title.title::after {
+		margin: 0 0 0 66px;
+	}
+	&__aquateraphy {
+		color: #FFFFFF;
+		font-family: 'El Messiri';
+		font-size: 64px;
+		line-height: 140%;
+		font-weight: 700;
+		transition: all 0.5s ease 0s;
+		transform: scale(1);
+	}
+	&__aquateraphy:hover {
+		color: rgb(18, 145, 223);
+		font-size: 80px;
+	}
+	&__image {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+	&__image img{
+		border-radius: 15px;
+	}
+}
+@media (max-width: 992px) {
+	.main-block__body {
+		padding:  100px 0 110px 0;
+	}
+}
+@media (max-width: 676px) {
+	.main-block__body {
+		padding: 100px 0 150px 0;
+	}
+	.main-block__aquateraphy {
+		font-size: 40px;
+	}
+	.main-block__image img{
+		object-position: right;
+	}
+}
+@media (max-width: 425px) {
+	.main-block__aqua div:not(:last-child) {
+		margin: 0 0 20px 0;
+	}
+	.main-block__body {
+		padding: 20px 0 70px 0;
+	}
+	.main-block__title.title::before {
+		margin: 0 15px 0 0;
+	}
+	.main-block__title.title::after {
+		margin: 0 0 0 15px;
+	}
+}
