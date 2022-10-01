@@ -1,8 +1,9 @@
-// ------------------------------ Основные настройки экрана -----------------------------------------------------------------------
 body {
-	font-family: 'ProximaNova-Regular';
+	font-family: 'ReformaGroteskBoldC';
+	font-family: 'ReformaGroteskMediumC';
+	font-family: 'ReformaGroteskDemiC';
 	font-size: 14px;
-	background-color: #162831;
+	background-color: #1E1E1E;
 	color: #FFFFFF;
 }
 .lock {
@@ -21,98 +22,339 @@ body {
 	}
 }
 .wrapper {
+	display: flex;
+	flex-flow: column;
+	min-height: 100%;
+	position: relative;
 }
-.swiper {
-	width: 100%;
-  }
 .container {
 	max-width: 1296px;
 	margin: 0px auto;
-	padding: 0 10px;
+	padding: 0 15px;
 	box-sizing: content-box;
 }
-.container-swiper {
-	margin: 0px auto;
-}
 
 
-@media (max-width: 992px) {
-	.container-swiper {
-		max-width: 992px;
-	}
-}
-@media (max-width: 767px) {
-	.container {
-		max-width: 700px;
-	}
-	.container-swiper {
-		max-width: 767px;
+.menu {
+	transition: all 0.3s ease 0s;
+		&__list {
+			display: grid;
+			grid-auto-flow: column;
+			gap: 40px;
+		}
+		&__list li {
+			position: relative;
+		}
+		&__link {
+			font-family: 'ReformaGroteskMediumC';
+			font-size: 24px;
+			line-height: 120%;
+			letter-spacing: 0.03em;
+			color: #FFFFFF;
+			white-space: nowrap;
+		}
+		&__list li::before, &__list li::after {
+			opacity: 0;
+			content: '';
+			width: 0%;
+			height: 1px;
+			background-color: #FFFFFF;
+			position: absolute;
+			bottom: 0;
+			transition: all 0.5s ease 0s;
+		}
+		&__list li::after {
+			right: 0;
+		}
+		&__list li::before {
+			left: 0;
+		}
+		&__list li:hover::after, &__list li:hover::before {
+			opacity: 1;
+			width: 50%;
+		}
+	@media (max-width: 767px) {
+		&__list {
+			grid-auto-flow: row;
+			gap: 10px;
+		}
+		&__link {
+			font-size: 30px;
+		}
+		&__body {
+			padding: 70px 20px 20px 20px;
+			background-color: #DB3138;
+			box-shadow: 0 0 20px black;
+		}
 	}
 }
 
 .page {
 	flex: 1 1 auto;
-	margin: 120px 0 30px 0;
-	& > div:not(:last-child) {
-		margin: 0 0 150px 0;
+	&__block-main {
+		position: relative;
 	}
-	&__main-block {}
-	&__session-block {}
-	&__feedback-block {}
 }
-@media (max-width: 992px) {
-	.page > div:not(:last-child) {
-		margin: 0 0 50px 0;
+.main-block {
+	position: relative;
+	&__contact-block {}
+	&__container {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__body {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		position: relative;
+		max-width: 483px;
+		padding: 237px 0 103px 0;
+		z-index: 2;
+	}
+	&__body div:not(:first-child) {
+		margin: 0 0 40px 0;
+	}
+	&__title {
+		font-family: 'ReformaGroteskBoldC';
+		font-size: 150px;
+		line-height: 125%;
+		text-align: center;
+		color: #DB3138;
+	}
+	&__dots {}
+	&__text {
+		max-width: 437px;
+		font-family: 'ReformaGroteskMediumC';
+		font-size: 40px;
+		line-height: 120%;
+		text-align: center;
+		color: #FFFFFF;
+	}
+	&__button {}
+	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+	&__image img {
+		
+	}
+	@media (max-width: 992px) {
+		&__body div:not(:first-child) {
+			margin: 0 0 35px 0;
+		}
+		&__image {
+			width: 100%;
+		}
+		&__image img {
+			object-position: -220px;
+		}
+
+	}
+	@media (max-width: 767px) {
+		&__body {
+			padding: 140px 0 150px 0;
+		}
+		&__title {
+			font-size: 90px;
+		}
+		&__text {
+			font-size: 30px;
+		}
+		&__image img {
+		}
+	}
+	@media (max-width: 425px) {
+		&__body {
+			padding: 103px 0 103px 0;
+		}
+		&__image img {
+			object-position: -150px;
+		}
 	}
 }
 
-.title {
-	white-space: none;
-	font-family: 'El Messiri';
-	font-size: 42px;
-	font-weight: 700;
+.btn {
+	font-family: 'ReformaGroteskDemiC';
+	font-size: 24px;
 	line-height: 140%;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
 	position: relative;
-	margin: 0 0 100px 0;
-	&__main-block {
-		font-size: 24px;
-	}
-	&::before, &::after {
-		white-space: none;
-		width: 28px;
-		height: 14px;
+	display: flex;
+	padding: 15px 0 12px 24px;
+	cursor: pointer;
+	user-select: none;
+	& span {
+		z-index: 2;
 	}
 	&::before {
-		content: url('/img/sketch_left_blue.svg');
-		margin: 0 45px 0 0;
+		z-index: 1;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 76%;
+		height: 100%;
+		background-color: #DB3138;
+		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
 	}
-	&::after {
-		content: url('/img/sketch_right_blue.svg');
-		margin: 0 0 0 45px;
-	}
-	&.title__main-block::before {
-		content: url('/img/sketch_left.svg');
-	}
-	&.title__main-block::after {
-		content: url('/img/sketch_right.svg');
-	}
-}
-@media (max-width: 1248px) {
-	.title {
-		margin: 0 0 30px 0;
+	&:hover::before {
+		width: 115%;
 	}
 }
-@media (max-width: 450px) {
-	.title.title__main-block {
-		font-size: 20px;
+.dots {
+	&__list {
+		display: grid;
+		gap: 30px;
+		grid-template: 1fr / repeat(4, 1fr);
+		grid-auto-columns: auto;
 	}
-	.title {
+	&__list li {
+		list-style: none;
+		width: 10px;
+		height: 10px;
+		transform: rotate(45deg);
+		background-color: #DB3138;
+	}
+}
+.contact-block {
+	margin: 0px auto;
+	z-index: 2;
+	position: relative;
+	&__body {
+		z-index: 2;
+		position: relative;
+	}
+	&__grid {
+		display: grid;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit,minmax(265px, 1fr));
+		grid-template-rows: auto;
+	}
+	&__item {
+		border: 1px solid rgba($color: #FFFFFF, $alpha: 0.5);
+		padding: 43px 0;
+	}
+	@media (max-width: 992px) {
+		&__item {
+			padding: 15px 0px;
+		}
+		&__item-3 {
+			grid-column: span 2;
+		}
+		&__grid {
+
+		}
+	}
+	@media (max-width: 530px) {
+		&__item-3 {
+			grid-column: auto;
+		}
+	}
+	@media (max-width: 425px) {
+		&__grid {
+
+		}
+	}
+}
+
+.contact {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	& > div:not(:last-child) {
+		margin: 0 0 20px 0;
+	}
+	&__title {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 18px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	&__text {
+		max-width: 265px;
+		font-family: 'ReformaGroteskDemiC';
 		font-size: 24px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #DB3138;
 	}
-	.title::before {
-		margin: 0 20px 0 0;
+	&__text a{
+		color: #DB3138;
+		display: block;
 	}
-	.title::after {
-		margin: 0 0 0 20px;
+	@media (max-width: 992px) {
+		&__title {
+			font-size: 16px;
+		}
+		&__text {
+			font-size: 20px;
+		}
+	}
+}
+
+.slider {
+	position: relative;
+	&__title {
+		display: none;
+		z-index: 4;
+	}
+	&__content {
+		transition: all 0.3s ease 0s;
+		position: relative;
+	}
+	@media (max-width: 425px) {
+		&__title {
+			font-size: 30px;
+			line-height: 140%;
+			display: block;
+			text-align: center;
+		}
+		&::before, &::after {
+			content: '';
+			z-index: 4;
+			border-radius: 30%;
+			width: 20px;
+			height: 4px;
+			position: absolute;
+			background-color: #DB3138;
+			top: 18px;
+			transition: all 0.3s ease 0s;
+		}
+		&::before {
+			transform: rotate(45deg);
+			right: 20px;
+		}
+		&::after {
+			transform: rotate(-45deg);
+			right: 8px;
+		}
+		&.active::before {
+			transform: rotate(-45deg);
+		}
+		&.active::after {
+			transform: rotate(45deg);
+		}
+		&.active &__content [class$="title"] {
+			display: none;
+		}
+		&__content {
+			display: none;
+			top: -40px;
+		}
+		&.active &__content{
+			top: 0;
+			display: block;
+		}
 	}
 }

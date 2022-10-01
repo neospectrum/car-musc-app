@@ -28,7 +28,7 @@ burger.addEventListener('click', function(event) {
     document.querySelector('.header__menu').classList.toggle('active');
     document.querySelector('.header').classList.toggle('active')
     // if (body.classList.contains('touch')) {
-        body.classList.toggle('lock');
+        // body.classList.toggle('lock');
     // }
 
 });
@@ -42,6 +42,15 @@ window.addEventListener('scroll', function(e) {
     }
 })
 
+const sliders = document.querySelectorAll('.slider');
+
+for (let slider of sliders) {
+    slider.addEventListener('click', function(event) {
+        if (event.target.closest('.slider__title')) {
+            this.classList.toggle('active');
+        }
+    })
+}
 // if (isMobile.any()) {
 //     body.classList.add('touch');
 //     let arrow = document.querySelectorAll('.arrow');
