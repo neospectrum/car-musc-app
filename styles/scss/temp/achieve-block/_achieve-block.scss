@@ -1,0 +1,89 @@
+.achieve-block {
+	&__container {}
+	&__body {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+		gap: 24px;
+	}
+	&__item {}
+	&__item > div:not(:last-child) {
+		margin: 0 0 40px 0;
+	}
+	&__title {
+
+	}
+	&__dots {}
+	&__text {
+		font-family: 'ReformaGroteskMediumC';
+		font-size: 24px;
+		line-height: 120%;
+		letter-spacing: 0.03em;
+	}
+	&__achievements {}
+	@media (max-width: 767px) {
+		&__body {
+			grid-auto-flow: row;
+			grid-template: repeat(auto-fit, minmax(150px, 1fr)) / 1fr;
+		}
+	}
+	@media (max-width: 425px) {
+		&__item > div:not(:last-child) {
+			margin: 0 0 20px 0;
+		}
+		&__title {
+			font-size: 30px;
+		}
+	}
+}
+.achievements {
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+	}
+	&__left-col {
+		
+	}
+	&__right-col {
+		padding: 40px 0 0 0;
+	}
+}
+.achievement {
+	border: 1px solid #898989;
+	padding: 25px 20px 35px 20px;
+	&__title {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 52px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #DB3138;
+	}
+	&__title::before {
+		content: '#';
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 24px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #DB3138;
+	}
+	&__title--image::before {
+		content: '';
+	}
+	&__text {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 16px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		white-space: pre-wrap;
+	}
+	@media (max-width: 425px) {
+		padding: 10px 5px 10px 5px;
+	}
+}

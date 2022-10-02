@@ -6,15 +6,16 @@
 	z-index: 100;
 	&::before {
 		content: '';
-		background-color: #1E1E1E;
 		width: 100%;
 		height: 100%;
 		position: absolute;
 		top: 0;
-		right: 150%;
 		z-index: 2;
 		transition: all 0.3s ease 0s;
 	}
+    &.scroll::before {
+        background-color: rgba($color: #000000, $alpha: 0.2);
+    }
 		&__body {
 			z-index: 3;
 			min-height: 110px;
@@ -23,6 +24,8 @@
 			justify-content: space-between;
 		}
 		&__menu {
+            z-index: 4;
+            transition: all 0.3s ease 0s;
 		}
 		&__burger {
 			width: 50px;
@@ -56,6 +59,7 @@
 			min-height: 60px;
 		}
 		&__menu {
+            z-index: 1;
 			position: absolute;
 			right: 150%;
 			height: 100%;
@@ -78,9 +82,14 @@
 		&__burger.active span {
 			right: 20%;
 		}
-		&.active::before {
-			right: 0;
-		}
+        // &.scroll::before {
+        //     background-color: #1E1E1E;
+        //     box-shadow: 0 0 40px 5px #DB3138;
+        // }
+		// &.active::before {
+        //     background-color: #1E1E1E;
+		// 	right: 0;
+		// }
 		&__menu.active {
 			right: 0;
 		}

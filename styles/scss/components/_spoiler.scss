@@ -1,0 +1,55 @@
+.slider {
+	position: relative;
+	&__title {
+		display: none;
+		z-index: 4;
+	}
+	&__content {
+		transition: all 0.3s ease 0s;
+		position: relative;
+	}
+	@media (max-width: 425px) {
+		&__title {
+			font-size: 30px;
+			line-height: 140%;
+			display: block;
+			text-align: center;
+		}
+		&::before, &::after {
+			content: '';
+			z-index: 4;
+			border-radius: 30%;
+			width: 20px;
+			height: 4px;
+			position: absolute;
+			background-color: #DB3138;
+			top: 18px;
+			transition: all 0.3s ease 0s;
+		}
+		&::before {
+			transform: rotate(45deg);
+			right: 20px;
+		}
+		&::after {
+			transform: rotate(-45deg);
+			right: 8px;
+		}
+		&.active::before {
+			transform: rotate(-45deg);
+		}
+		&.active::after {
+			transform: rotate(45deg);
+		}
+		&.active &__content [class$="title"] {
+			display: none;
+		}
+		&__content {
+			display: none;
+			top: -40px;
+		}
+		&.active &__content{
+			top: 0;
+			display: block;
+		}
+	}
+}

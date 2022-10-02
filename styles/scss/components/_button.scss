@@ -1,0 +1,30 @@
+.btn {
+	font-family: 'ReformaGroteskDemiC';
+	font-size: 24px;
+	line-height: 140%;
+	text-align: center;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	position: relative;
+	display: flex;
+	padding: 15px 0 12px 24px;
+	cursor: pointer;
+	user-select: none;
+	& span {
+		z-index: 2;
+	}
+	&::before {
+		z-index: 1;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 76%;
+		height: 100%;
+		background-color: #DB3138;
+		transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
+	}
+	&:hover::before {
+		width: 115%;
+	}
+}

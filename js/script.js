@@ -46,9 +46,13 @@ const sliders = document.querySelectorAll('.slider');
 
 for (let slider of sliders) {
     slider.addEventListener('click', function(event) {
-        if (event.target.closest('.slider__title')) {
-            this.classList.toggle('active');
-        }
+        if (document.querySelector('.slider.active') !== null && document.querySelector('.slider.active') !== slider) {
+            document.querySelector('.slider.active').classList.toggle('active') 
+        };
+
+            if (event.target.closest('.slider__title')) {
+                this.classList.toggle('active');
+            };
     })
 }
 // if (isMobile.any()) {
@@ -89,59 +93,40 @@ for (let slider of sliders) {
 // //     }
 // // }
 
-const swiper = new Swiper('.swiper', {
+const swiper = new Swiper('.swiper-block', {
     loop: true,
-    effect: 'coverflow',
     simulateTouch: true,
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    slidesPerGroup: 1,
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
     breakpoints: {
-        767: {
-            slidesPerView: 2,
-            effect: 'slide',
-            spaceBetween: 20,
-            coverflowEffect: {
-                slideShadows: false,
-            },
-            slidesPerGroup: 2,
-        },
         320: {
-            slidesPerView: 1,   
-            slidesPerGroup: 1,
-            effect: 'slide',
-            centeredSlides: true,
-            centerInsufficientSlides: true,
-            freeMode: {
+            slidesPerView: 1,
+            navigation: {
                 enabled: false,
             },
-            coverflowEffect: {
-                slideShadows: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                clickable: true,
+                disabled: false,
+              },
+        },
+        992: {
+            navigation: {
+                enabled: true,
             },
-            spaceBetween: 100,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'bullets',
+                enabled: false,
+              },
+            slidesPerView: 2,
         },
         1296: {
             slidesPerView: 3,
-            coverflowEffect: {
-                rotate: 0,
-                stretch: -40,
-                slideShadows: true,
-            },
-            slidesPerGroup: 1,
-        },
+        },      
     },
-    freeMode: {
-        enabled: true,
-        sticky: true,
-    },
-    autoplay: {
-        delay: 1000,
-      },
     
   });

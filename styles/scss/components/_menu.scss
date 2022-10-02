@@ -1,0 +1,53 @@
+.menu {
+	transition: all 0.3s ease 0s;
+		&__list {
+			display: grid;
+			grid-auto-flow: column;
+			gap: 40px;
+		}
+		&__list li {
+			position: relative;
+		}
+		&__link {
+			font-family: 'ReformaGroteskMediumC';
+			font-size: 24px;
+			line-height: 120%;
+			letter-spacing: 0.03em;
+			color: #FFFFFF;
+			white-space: nowrap;
+		}
+		&__list li::before, &__list li::after {
+			opacity: 0;
+			content: '';
+			width: 0%;
+			height: 1px;
+			background-color: #FFFFFF;
+			position: absolute;
+			bottom: 0;
+			transition: all 0.5s ease 0s;
+		}
+		&__list li::after {
+			right: 0;
+		}
+		&__list li::before {
+			left: 0;
+		}
+		&__list li:hover::after, &__list li:hover::before {
+			opacity: 1;
+			width: 50%;
+		}
+	@media (max-width: 767px) {
+		&__list {
+			grid-auto-flow: row;
+			gap: 10px;
+		}
+		&__link {
+			font-size: 30px;
+		}
+		&__body {
+			padding: 70px 20px 20px 20px;
+			background-color: #DB3138;
+			box-shadow: 0 0 20px black;
+		}
+	}
+}
