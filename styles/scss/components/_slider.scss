@@ -1,6 +1,7 @@
 .slider {
 	position: relative;
 	&__title {
+		width: 100%;
 		display: none;
 		z-index: 4;
 	}
@@ -41,6 +42,9 @@
 			transform: rotate(45deg);
 		}
 		&.active &__content [class$="title"] {
+			display: none;
+		}
+		&.active &__content [class$="title--big"], &.active &__content [class$="dots"] {
 			display: none;
 		}
 		&__content {

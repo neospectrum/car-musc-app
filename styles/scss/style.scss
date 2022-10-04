@@ -1,11 +1,21 @@
 @import './service/null';
 @import './service/fonts';
+
 @import './main';
+
 @import './page/header';
 @import './page/footer';
+
+@import './components/button';
+@import './components/menu';
+@import './components/slider';
+@import './components/swiper';
+@import './components/tab';
+
 @import './temp/main-block/main-block';
 @import './temp/main-block/contact-block';
 @import './temp/achieve-block/achieve-block';
-@import './components/button';
-@import './components/menu';
-@import './components/spoiler';
+@import './temp/swiper-block/swiper-block';
+@import './temp/advantage-block/advantage-block';
+@import './temp/service-block/service-block';
+@import './temp/portfolio-block/portfolio-block';

@@ -1,0 +1,35 @@
+.portfolio-block {
+	&__container {}
+	&__body {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+	}
+	&__body > div:not(:last-child) {
+		margin: 0 0 40px 0;
+	}
+	&__body > div:last-child {
+		margin: 0 0 60px 0;
+	}
+	&__title {}
+	&__dots {}
+	&__images {
+		margin: 0px auto;
+		max-width: 1920px;
+	}
+	&__grid {
+		display: grid;
+		grid-auto-flow: row;
+		align-items: center;
+		justify-content: center;
+		grid-template-columns: repeat(auto-fit, minmax(50px, 315.9999px));
+	}
+	&__item {}
+	&__image {}
+	@media (max-width: 320px) {
+		&__grid {
+			grid-template-columns: repeat(auto-fit, minmax(50px, 320px));
+		}
+	}
+}

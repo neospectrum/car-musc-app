@@ -1,0 +1,102 @@
+.service-block {
+	&__container {}
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-flow: column;
+	}
+	&__body > div:not(:last-child) {
+		margin: 0 0 40px 0;
+	}
+	&__title {}
+	&__dots {
+		padding: 0 0 20px 0;
+	}
+	&__tabs {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		gap: 80px;
+	}
+}
+
+
+
+.services {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(306px, 1fr));
+	grid-auto-flow: column;
+	justify-content: space-between;
+	gap: 24px;
+	&__item {
+
+	}
+	@media (max-width: 1296px) {
+		& {
+			grid-auto-flow: row;
+		}
+	}
+	@media (max-width: 470px) {
+		& {
+			grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+		}
+	}
+}
+.service {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 60px 40px 50px 40px;
+	border: 1px solid #898989;
+	height: 100%;
+	&__image {
+		position: relative;
+		margin: 0 0 25px 0;
+	}
+	&__text-block {
+		flex: 1 1 auto;
+		display: flex;
+		gap: 20px;
+		flex-flow: column;
+		align-items: center;
+		justify-content: flex-end;
+	}
+	&__title {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 24px;
+		line-height: 140%;	
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	&__text {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 16px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	&__button.btn::before{
+		width: 62%;
+	}
+	&__button.btn{
+		padding: 10px 0 6px 20px;
+		font-size: 18px;
+		line-height: 140%;
+		text-align: center;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	&__button {
+		margin: 25px 0 0 0;
+		max-height: 41px;
+	}
+	@media (max-width: 470px) {
+		& {
+			padding: 30px 20px 25px 20px;
+		}
+	}
+}

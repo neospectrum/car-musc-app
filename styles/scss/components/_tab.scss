@@ -1,0 +1,53 @@
+.tabs {
+	display: flex;
+	gap: 60px;
+	&__tab {
+	}
+	&__content {}
+	&__list li {
+		display: none;
+	}
+	&__list li.active{ 
+		display: block;
+	}
+	&__item {}
+	@media (max-width: 470px) {
+		& {
+			gap: 20px;
+			flex-flow: column;
+		}
+	}
+}
+.tab {
+	cursor: pointer;
+	&__title {
+		font-family: 'ReformaGroteskDemiC';
+		font-size: 32px;
+		line-height: 140%;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+		color: #FFFFFF;
+		padding: 20px 40px 10px 40px;
+		position: relative;
+		display: flex;
+		overflow: hidden;
+	}
+	&__title p{
+		 z-index: 3;
+	}
+	&__title::before {
+		z-index: 2;
+		content: '';
+		width: 100%;
+		height: 100%;
+		background-color: rgba($color: #DB3138, $alpha: 1);
+		position: absolute;
+		top: 0;
+		left: -100%;
+		transition: all 0.5s ease 0s;
+	}
+	&.active &__title{	}
+	&.active &__title::before{
+		left: 0;
+	}
+}
