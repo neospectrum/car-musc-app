@@ -82,6 +82,9 @@
 	&__button.btn::before{
 		width: 62%;
 	}
+	&__button.btn:hover::before {
+		width: 120%;
+	}
 	&__button.btn{
 		padding: 10px 0 6px 20px;
 		font-size: 18px;

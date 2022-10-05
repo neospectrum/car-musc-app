@@ -1,0 +1,17 @@
+.socials {
+	&__list {
+		display: grid;
+		gap: 15px;
+	}
+	&__list li {
+		display: flex;
+	}
+	&__link {
+		transition: all 0.5s ease 0s;
+		border: 1px solid #898989;
+		padding: 10px;
+	}
+	&__link:hover {
+		background-color: #898989;
+	}
+}

@@ -1,10 +1,11 @@
 .footer {
-    border-top: 1px solid #898989;
+	position: relative;
 	&__body {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		min-height: 90px;
+		border-top: 1px solid #898989;
 	}
 	&__service {
 		font-family: 'ReformaGroteskDemiC';
@@ -15,7 +16,19 @@
 		color: #FFFFFF;
 		opacity: 0.5;
 	}
+	&__title {
+		text-align: center;
+	}
 	&__menu {}
+	&__dots {
+		margin: 40px 0 60px 0;
+	}
+	&__form-block {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 	@media (max-width: 992px) {
 		&__service {
 			font-size: 14px;
@@ -32,5 +45,16 @@
 		&__menu {
 			display: none;
 		}
+	}
+}
+.form-block {
+	&__body {
+		max-width: 636px;
+		padding: 100px 0;
+		width: 100%;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
 	}
 }
